@@ -22,17 +22,17 @@ window.addEventListener("DOMContentLoaded", () => {
       products.forEach((product) => {
         const col = document.createElement("div");
         col.classList.add("col");
-        col.innerHTML = `<div class="card shadow-sm"> 
-        <img src=${product.imageUrl} class="card-img-top" width="100%"  alt="...">
+        col.innerHTML = `<div class="card border-black shadow-sm"> 
+        <img src=${product.imageUrl} class="card-img-top" width="100%" alt="${product.name}">
         <div class="card-body"> 
         <p class="card-text">${product.name}</p> 
         <p class="card-text">€${product.price}</p> 
         <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
-        <a href="details.html?appId=${product._id}" class="btn btn-primary">Learn more</a>
-        <a href="backoffice.html?appId=${product._id}" class="btn btn-primary">Edit</a>
+        <a href="details.html?appId=${product._id}" class="btn btn-dark text-warning">Learn more</a>
+        <a href="backoffice.html?appId=${product._id}" class="btn btn-dark text-warning">Edit</a>
         </div>
-        <small class="text-body-secondary">By ${product.brand}</small>
+        <small class="text-dark">By ${product.brand}</small>
         </div>
         </div>
         </div>`;

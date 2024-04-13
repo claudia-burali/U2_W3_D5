@@ -5,6 +5,8 @@ const URL = id
   : "https://striveschool-api.herokuapp.com/api/product/";
 const met = id ? "PUT" : "POST";
 
+/*AGGIUNGERE LOGICA BOTTONE RESET*/
+
 window.onload = () => {
   const form = document.querySelector("form");
   form.addEventListener("submit", handleSubmit);
@@ -12,7 +14,7 @@ window.onload = () => {
   const subtitle = document.getElementById("subtitle");
 
   if (id) {
-    subtitle.innerText = "Edit product spec";
+    subtitle.innerText = "_ Edit product spec";
     submitBtn.classList.remove("btn-primary");
     submitBtn.classList.add("btn-success");
     submitBtn.innerText = "Edit";
@@ -46,7 +48,7 @@ window.onload = () => {
       })
       .catch((err) => console.log(err));
   } else {
-    subtitle.innerText = "Add new product";
+    subtitle.innerText = "_ Add new product";
   }
 };
 
