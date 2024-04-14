@@ -5,18 +5,16 @@ const URL = id
   : "https://striveschool-api.herokuapp.com/api/product/";
 const met = id ? "PUT" : "POST";
 
-/*AGGIUNGERE LOGICA BOTTONE RESET*/
-
 window.onload = () => {
   const form = document.querySelector("form");
   form.addEventListener("submit", handleSubmit);
   const submitBtn = document.querySelector("button[type='submit']");
+  const resetBtn = document.querySelector(".resetBtn");
+  resetBtn.addEventListener("click", resetForm);
   const subtitle = document.getElementById("subtitle");
 
   if (id) {
     subtitle.innerText = "_ Edit product spec";
-    submitBtn.classList.remove("btn-primary");
-    submitBtn.classList.add("btn-success");
     submitBtn.innerText = "Edit";
 
     const delBtn = document.querySelector(".btn-danger");
@@ -112,5 +110,12 @@ const handleDelete = () => {
         window.location.assign("./index.html");
       })
       .catch((err) => console.log(err));
+  }
+};
+const resetForm = () => {
+  const confirmed = confirm("Do you really want to clear the form?");
+
+  if (confirmed) {
+    window.location.assign("./backoffice.html");
   }
 };

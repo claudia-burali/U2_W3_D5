@@ -23,15 +23,18 @@ window.addEventListener("DOMContentLoaded", () => {
       console.log(detail);
       console.log(products);
       const info = document.createElement("div");
-      info.classList.add("info");
+      info.classList.add("d-flex");
+      info.classList.add("gap-5");
+      info.classList.add("p-3");
+      info.classList.add("m-5");
       info.innerHTML = ` 
     <img src=${products.imageUrl} alt="${products.name}">
     <div> 
     <h3>${products.name}</h3> 
     <p>${products.description}</p>
     <p>By ${products.brand}</p>
-    <p>€${products.price}</p> 
-    <p>Product ID: ${products._id}</p>
+    <p class="badge text-bg-warning">€${products.price}</p> 
+    <p class="text-secondary">Product ID: ${products._id}</p>
     <a href="backoffice.html?appId=${products._id}" class="btn btn-dark text-warning">Edit</a>
     </div>`;
       detail.appendChild(info);
